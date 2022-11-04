@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soap", "Soap\Soap.csproj", "{B0D92880-D0F2-488E-8E57-9C2C696A36CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryServiceWebClient", "LibraryServiceWebClient\LibraryServiceWebClient.csproj", "{5EC8CE82-EEBF-42B1-8C02-44D654E6A6C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0D92880-D0F2-488E-8E57-9C2C696A36CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D92880-D0F2-488E-8E57-9C2C696A36CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D92880-D0F2-488E-8E57-9C2C696A36CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D92880-D0F2-488E-8E57-9C2C696A36CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC8CE82-EEBF-42B1-8C02-44D654E6A6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC8CE82-EEBF-42B1-8C02-44D654E6A6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC8CE82-EEBF-42B1-8C02-44D654E6A6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC8CE82-EEBF-42B1-8C02-44D654E6A6C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA89BBFB-5FE1-4B8E-BC24-048956397457}
+	EndGlobalSection
+EndGlobal
