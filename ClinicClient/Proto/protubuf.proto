@@ -1,0 +1,87 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "ClinicService.Proto";
+
+import "google/protobuf/wrappers.proto";
+
+
+service ClinicService{
+	rpc CreateClient(CreateClientRequest) returns (CreateClientResponse);
+	rpc UpdateClient(UpdateClientRequest) returns (UpdateClientResponse);
+	rpc DeleteClient(DeleteClientRequest) returns (DeleteClientResponse);
+	rpc GetClientById(GetClientByIdRequest) returns (GetClientByIdResponse);
+	rpc GetClients(GetClientsRequest) returns (GetClientsResponse);
+}
+
+
+message	CreateClientRequest{
+	string document = 1;
+	string surname = 2;
+	string firstname = 3;
+	string patronimic = 4;
+}
+
+message	CreateClientResponse{
+	google.protobuf.Int32Value clientId = 1;
+	int32 errCode = 2;
+	string errMessage = 3;	
+}
+
+
+
+message	UpdateClientRequest{
+	int32 clientId = 1;
+	string document = 2;
+	string surname = 3;
+	string firstname = 4;
+	string patronimic = 5;
+}
+
+
+
+message	UpdateClientResponse{
+	int32 errCode = 1;
+	string errMessage = 2;	
+}
+
+
+message	DeleteClientRequest{
+	int32 clientId = 1;
+}
+
+message	DeleteClientResponse{
+	int32 errCode = 1;
+	string errMessage = 2;	
+}
+
+
+
+message	GetClientByIdRequest{
+	int32 clientId = 1;
+}
+
+
+message GetClientByIdResponse{
+	ClientResponse client = 1;
+	int32 errCode = 2;
+	string errMessage = 3;	
+}
+
+message	GetClientsRequest{
+	
+}
+
+message	GetClientsResponse{
+	repeated ClientResponse clients = 1;
+	int32 errCode = 2;
+	string errMessage = 3;	
+}
+
+
+message ClientResponse{
+	int32 clientId = 1;
+	string document = 2;
+	string surname = 3;
+	string firstname = 4;
+	string patronimic = 5;
+}

@@ -1,0 +1,116 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "ClinicService.Proto";
+
+import "google/protobuf/wrappers.proto";
+
+import "google/api/http.proto";
+
+import "google/api/annotations.proto";
+
+service ClinicService
+{
+	rpc CreateClient(CreateClientRequest) returns (CreateClientResponse){
+	option (google.api.http) = {
+		get: "/ClinicService/CreateClient"
+    };}
+
+ 
+	rpc UpdateClient(UpdateClientRequest) returns (UpdateClientResponse){
+	option (google.api.http) = {
+      post: "/ClinicService/UpdateClient"
+    };}
+ 
+	rpc DeleteClient(DeleteClientRequest) returns (DeleteClientResponse){
+	option (google.api.http) = {
+      delete: "/ClinicService/DeleteClient"
+    };}
+  
+	rpc GetClientById(GetClientByIdRequest) returns (GetClientByIdResponse){
+	option (google.api.http) = {
+      get: "/ClinicService/GetClientById"
+    };}
+   
+	rpc GetClients(GetClientsRequest) returns (GetClientsResponse){
+	option (google.api.http) = {
+      get: "/ClinicService/GetClients"
+    };}
+}
+
+
+
+
+
+
+
+message	CreateClientRequest{
+	string document = 1;
+	string surname = 2;
+	string firstname = 3;
+	string patronimic = 4;
+}
+
+message	CreateClientResponse{
+	google.protobuf.Int32Value clientId = 1;
+	int32 errCode = 2;
+	string errMessage = 3;	
+}
+
+
+
+message	UpdateClientRequest{
+	int32 clientId = 1;
+	string document = 2;
+	string surname = 3;
+	string firstname = 4;
+	string patronimic = 5;
+}
+
+
+
+message	UpdateClientResponse{
+	int32 errCode = 1;
+	string errMessage = 2;	
+}
+
+
+message	DeleteClientRequest{
+	int32 clientId = 1;
+}
+
+message	DeleteClientResponse{
+	int32 errCode = 1;
+	string errMessage = 2;	
+}
+
+
+
+message	GetClientByIdRequest{
+	int32 clientId = 1;
+}
+
+
+message GetClientByIdResponse{
+	ClientResponse client = 1;
+	int32 errCode = 2;
+	string errMessage = 3;	
+}
+
+message	GetClientsRequest{
+	
+}
+
+message	GetClientsResponse{
+	repeated ClientResponse clients = 1;
+	int32 errCode = 2;
+	string errMessage = 3;	
+}
+
+
+message ClientResponse{
+	int32 clientId = 1;
+	string document = 2;
+	string surname = 3;
+	string firstname = 4;
+	string patronimic = 5;
+}
